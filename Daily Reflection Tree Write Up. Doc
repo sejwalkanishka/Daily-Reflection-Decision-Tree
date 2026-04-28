@@ -1,0 +1,126 @@
+# Daily Reflection Tree 
+
+## 1. Overview
+
+This project implements a deterministic reflection system designed to analyze an individual’s daily behavior across three psychological dimensions: locus of control, orientation, and radius of concern.
+
+The objective was to create a structured, explainable, and repeatable decision system that guides users through meaningful self-reflection without relying on probabilistic or AI-driven inference.
+
+---
+
+## 2. Design Approach
+
+I approached this assignment as a knowledge engineering problem rather than a coding task. The goal was to encode human reflection into a structured decision tree while preserving clarity, determinism, and psychological depth.
+
+The tree is divided into three sequential axes:
+
+### Axis 1: Locus (Victim vs. Victor)
+
+This stage evaluates whether the user attributes outcomes to internal effort or external circumstances. Questions were designed to distinguish between ownership and passivity.
+
+### Axis 2: Orientation (Contribution vs. Entitlement)
+
+This stage analyzes whether the user focused on contributing value or expecting outcomes. It identifies behavioral signals related to collaboration and expectations.
+
+### Axis 3: Radius (Self vs. Others)
+
+This stage evaluates the scope of the user’s thinking—whether it is self-centered or considers broader impact on others.
+
+Each axis builds on the previous one, creating a progressive reflection flow.
+
+---
+
+## 3. Deterministic Structure
+
+The system is fully deterministic:
+
+* Each question has predefined answer options
+* Each answer maps to a fixed decision path
+* No randomness or inference is involved
+* The same input always produces the same output
+
+Decision nodes explicitly control branching logic, ensuring transparency and reproducibility.
+
+---
+
+## 4. Question Design Strategy
+
+Questions were designed with the following principles:
+
+* **Signal extraction**: Each question captures a specific behavioral indicator
+* **Clarity over complexity**: Limited options to avoid ambiguity
+* **Progressive depth**: Each level builds on previous responses
+* **Real-world relevance**: Situations reflect actual daily experiences
+
+Reflections were added after each axis to provide immediate interpretability and reinforce learning.
+
+---
+
+## 5. Trade-offs
+
+Several trade-offs were considered:
+
+* Increasing depth vs maintaining usability
+* Limiting options vs capturing nuance
+* Structural rigidity vs conversational flow
+
+I prioritized clarity, determinism, and psychological alignment over excessive branching complexity.
+
+---
+
+## 6. AI Usage and Hallucination Control
+
+AI was used as a supporting tool during ideation, not as a decision-maker.
+
+To prevent hallucination:
+
+### Guardrails
+
+* Restricted AI to structured outputs only
+* Forced adherence to predefined options
+* Avoided open-ended generation
+
+### Negative Prompting
+
+* Explicitly instructed AI not to introduce new logic
+* Prevented assumptions or extrapolation
+
+### Validation
+
+* All outputs were manually verified
+* Ensured strict alignment with decision tree logic
+* Rejected inconsistent or ambiguous suggestions
+
+In multiple instances, AI-generated ideas were discarded when they violated determinism or clarity.
+
+---
+
+## 7. System Behavior
+
+The system behaves as a guided reflection assistant:
+
+* It starts with general self-assessment
+* Moves into causal reasoning
+* Expands into social and external awareness
+* Ends with a synthesized summary
+
+This creates a structured yet natural reflection journey.
+
+---
+
+## 8. Future Improvements
+
+With more time, the system can be extended by:
+
+* Increasing depth within each axis
+* Adding longitudinal tracking of user responses
+* Building a visualization dashboard
+* Converting into an interactive web or mobile application
+
+---
+
+## 9. Conclusion
+
+This project demonstrates how structured decision systems can model human reflection in a deterministic and explainable way. By combining psychological frameworks with rule-based logic, the system provides meaningful insights while maintaining full transparency and control.
+
+The focus was not on complexity, but on clarity, structure, and correctness.
