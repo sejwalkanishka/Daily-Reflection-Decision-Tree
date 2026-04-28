@@ -14,6 +14,32 @@ The system is designed as a **progressive reflection flow**:
 * Moves to behavioral intent (Orientation)
 * Expands to social awareness (Radius)
 
+## 🧠 Problem Statement
+
+How can we model human daily reflection in a structured, deterministic, and explainable way without relying on probabilistic AI systems?
+
+This project answers that using a knowledge-engineered decision tree.
+
+## 🌍 Why This Matters
+
+Most reflection tools are vague, inconsistent, and heavily dependent on subjective interpretation.
+
+This system introduces:
+- Determinism → same input = same output
+- Explainability → every decision is traceable
+- Psychological grounding → based on locus, orientation, and radius frameworks
+
+  ## 📊 Tree Structure Format
+
+The decision tree is implemented using a structured TSV format with the following fields:
+
+- id → unique node identifier  
+- parentId → parent node  
+- type → question / decision / reflection / bridge / summary  
+- text → content  
+- options → predefined choices  
+- target → routing logic  
+- signal → psychological axis indicator  
 ---
 
 ## 🧠 Key Highlights
@@ -37,6 +63,42 @@ To ensure reliability and prevent hallucination:
 * All logic was manually validated for consistency
 
 ---
+
+## 🤖 AI Usage & Hallucination Control
+
+AI was used strictly as an assistive tool during ideation.
+
+To ensure reliability:
+
+- Enforced deterministic outputs only
+- Restricted responses to predefined options
+- Used negative prompting to prevent assumption generation
+- Rejected AI outputs that introduced ambiguity or non-determinism
+
+Final system logic was fully human-validated.
+
+## ⚙️ Design Principles
+
+- Determinism over randomness  
+- Clarity over complexity  
+- Signal extraction over generic reflection  
+- Structured flow over open-ended responses
+
+  ## 🔍 Example Flow
+
+Input:
+- Day: Tough  
+- Reaction: Blame situation  
+- Interaction: Expected recognition  
+- Focus: Myself  
+
+Output:
+- Locus: External  
+- Orientation: Entitlement  
+- Radius: Self  
+
+Reflection:
+Opportunity to increase ownership, contribution mindset, and external awareness.
 
 ## 📁 Project Structure
 
@@ -68,3 +130,5 @@ python agent.py
 ## 📌 Note
 
 This project focuses on **clarity over complexity**, emphasizing strong foundational logic rather than unnecessary abstraction.
+
+Built as part of DeepThought CultureTech selection assignment.
