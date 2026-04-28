@@ -1,0 +1,49 @@
+id	parentId	type	text	options	target	signal
+
+START	null	start	Good evening. Let's reflect on your day.			
+
+A1_OPEN	START	question	How would you describe your day?	Productive|Tough|Mixed|Frustrating		
+
+A1_D1	A1_OPEN	decision		answer=Productive|Mixed:A1_Q1_HIGH;answer=Tough|Frustrating:A1_Q1_LOW		
+
+A1_Q1_HIGH	A1_D1	question	When things went well, what caused it?	My effort|Team support|Luck|Adaptation		axis1:internal
+
+A1_Q1_LOW	A1_D1	question	When things went wrong, what was your instinct?	Fix what I can|Wait for help|Blame situation|Feel stuck		axis1:external
+
+A1_R1	A1_Q1_HIGH	reflection	You took ownership of outcomes. That shows strong agency.			axis1:internal
+
+A1_R2	A1_Q1_LOW	reflection	It's natural to feel stuck, but even small choices reflect control.			axis1:external
+
+BRIDGE_1	A1_R1	bridge	Now let's look at what you contributed today.		A2_OPEN	
+BRIDGE_1B	A1_R2	bridge	Now let's look at what you contributed today.		A2_OPEN	
+
+A2_OPEN	null	question	What best describes your interaction today?	Helped someone|Did my job only|Expected recognition|Felt others lacked effort		
+
+A2_D1	A2_OPEN	decision		answer=Helped someone:A2_Q1_HIGH;answer=Did my job only|Expected recognition|Felt others lacked effort:A2_Q1_LOW		
+
+A2_Q1_HIGH	A2_D1	question	Why did you help?	It felt right|Team success matters|Habit|Asked to help		axis2:contribution
+
+A2_Q1_LOW	A2_D1	question	What frustrated you most?	Lack of recognition|Others underperforming|Extra work|Unfair expectations		axis2:entitlement
+
+A2_R1	A2_Q1_HIGH	reflection	You focused on giving. That builds trust and long-term growth.			axis2:contribution
+
+A2_R2	A2_Q1_LOW	reflection	Noticing expectations helps shift toward contribution mindset.			axis2:entitlement
+
+BRIDGE_2	A2_R1	bridge	Now let's reflect beyond yourself.		A3_OPEN	
+BRIDGE_2B	A2_R2	bridge	Now let's reflect beyond yourself.		A3_OPEN	
+
+A3_OPEN	null	question	Who comes to mind when thinking about your day?	Myself|My team|A colleague|Customers		
+
+A3_D1	A3_OPEN	decision		answer=Myself:A3_Q1_LOW;answer=My team|A colleague|Customers:A3_Q1_HIGH		
+
+A3_Q1_HIGH	A3_D1	question	How did your actions affect others?	Positively|Neutral|Unsure|Could improve		axis3:altro
+
+A3_Q1_LOW	A3_D1	question	What was your main concern today?	My workload|My stress|My goals|My challenges		axis3:self
+
+A3_R1	A3_Q1_HIGH	reflection	You considered others — this expands your impact and meaning.			axis3:altro
+
+A3_R2	A3_Q1_LOW	reflection	Focusing inward is natural, but widening perspective builds purpose.			axis3:self
+
+SUMMARY	A3_R1	summary	Today you showed {axis1.dominant} agency, {axis2.dominant} contribution, and {axis3.dominant} focus.			
+
+END	SUMMARY	end	See you tomorrow.			
